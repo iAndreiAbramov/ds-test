@@ -1,4 +1,5 @@
 import { AppRoute } from 'constants/AppRoute';
+import { QueryParam } from 'constants/QueryParam';
 
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
@@ -12,14 +13,13 @@ export const App: React.FC = () => {
         <BrowserRouter>
             <Routes>
                 <Route path={AppRoute.Root()} element={<Navigate to={AppRoute.Users()} />} />
-                <Route path={AppRoute.Users()}>
-                    <Route index element={<UsersPage />} />
-                    <Route path=":userId" element={<UserPage />} />
-                </Route>
-                <Route path={AppRoute.Posts()}>
-                    <Route index element={<PostsPage />} />
-                    <Route path=":postId" element={<PostPage />} />
-                </Route>
+                <Route path={AppRoute.Users()} element={<UsersPage />} />
+                <Route path={AppRoute.User(`:${QueryParam.UserId}`)} element={<UserPage />} />
+                <Route path={AppRoute.Posts(`:${QueryParam.UserId}`)} element={<PostsPage />} />
+                <Route
+                    path={AppRoute.Post(`:${QueryParam.UserId}`, `:${QueryParam.PostId}`)}
+                    element={<PostPage />}
+                />
             </Routes>
         </BrowserRouter>
     );
