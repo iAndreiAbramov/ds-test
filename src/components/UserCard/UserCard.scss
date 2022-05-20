@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.userCard {
+    padding: 15px 17px;
+    width: 240px;
+
+    border: $border-card;
+
+    &:hover {
+        border: $border-card-hover;
+    }
+}
+
+.userCard-title {
+    margin-bottom: 35px;
+
+    font-style: normal;
+    font-weight: $fw-title;
+    font-size: 17px;
+    line-height: 1.35;
+    text-transform: capitalize;
+    color: $fc-dark;
+}

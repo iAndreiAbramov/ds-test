@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Button } from 'components/Button/Button';
+import { UserCard } from 'components/UserCard';
 
 export const UsersPage: React.FC = () => {
     return (
         <>
             <div>Users page</div>
-            <Button handleClick={() => null}>Смотреть профиль</Button>
+            <UserCard name="Иван" surname="Иванов" userId="1" />
         </>
     );
 };
