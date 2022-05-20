@@ -1,0 +1,17 @@
+@import '../../variables';
+
+.button {
+    padding: 10px 20px;
+
+    font-style: normal;
+    font-weight: $fw-button;
+    font-size: 11px;
+    line-height: 1.36;
+    color: $fc-light;
+
+    background-color: $bgc-button;
+    border: $border-button;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
