@@ -1,8 +1,7 @@
-import { AppRoute } from 'constants/AppRoute';
-import { QueryParam } from 'constants/QueryParam';
-
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { AppRoute } from 'constants/AppRoute';
+import { QueryParam } from 'constants/QueryParam';
 import { PostPage } from 'pages/PostPage';
 import { PostsPage } from 'pages/PostsPage';
 import { UserPage } from 'pages/UserPage';

@@ -13,26 +13,36 @@ export const UserVerbose: React.FC<IUserVerboseProps> = ({ user }) => {
         <article className={CnUserVerbose()}>
             <h2 className={CnUserVerbose('title')}>{username}</h2>
             <table className={CnUserVerbose('table')}>
-                <tr className={CnUserVerbose('row')}>
-                    <td className={CnUserVerbose('cell')}>Name</td>
-                    <td className={CnUserVerbose('cell')}>{name}</td>
-                </tr>
-                <tr className={CnUserVerbose('row')}>
-                    <td className={CnUserVerbose('cell')}>Email</td>
-                    <td className={CnUserVerbose('cell')}>{email}</td>
-                </tr>
-                <tr className={CnUserVerbose('row')}>
-                    <td className={CnUserVerbose('cell')}>Phone</td>
-                    <td className={CnUserVerbose('cell')}>{phone}</td>
-                </tr>
-                <tr className={CnUserVerbose('row')}>
-                    <td className={CnUserVerbose('cell')}>Website</td>
-                    <td className={CnUserVerbose('cell')}>{website}</td>
-                </tr>
-                <tr className={CnUserVerbose('row')}>
-                    <td className={CnUserVerbose('cell')}>Company</td>
-                    <td className={CnUserVerbose('cell')}>{`${company.name}, ${company.bs}`}</td>
-                </tr>
+                <tbody>
+                    <tr className={CnUserVerbose('row')}>
+                        <td className={CnUserVerbose('cell')}>Name</td>
+                        <td className={CnUserVerbose('cell')}>{name}</td>
+                    </tr>
+                    <tr className={CnUserVerbose('row')}>
+                        <td className={CnUserVerbose('cell')}>Email</td>
+                        <td className={CnUserVerbose('cell')}>
+                            <a href={`mailto:${email}`}>{email}</a>
+                        </td>
+                    </tr>
+                    <tr className={CnUserVerbose('row')}>
+                        <td className={CnUserVerbose('cell')}>Phone</td>
+                        <td className={CnUserVerbose('cell')}>
+                            <a href={`tel:${phone}`}>{phone}</a>
+                        </td>
+                    </tr>
+                    <tr className={CnUserVerbose('row')}>
+                        <td className={CnUserVerbose('cell')}>Website</td>
+                        <td className={CnUserVerbose('cell')}>
+                            <a href={`https://${website}`}>{website}</a>
+                        </td>
+                    </tr>
+                    <tr className={CnUserVerbose('row')}>
+                        <td className={CnUserVerbose('cell')}>Company</td>
+                        <td
+                            className={CnUserVerbose('cell')}
+                        >{`${company.name}, ${company.bs}`}</td>
+                    </tr>
+                </tbody>
             </table>
         </article>
     );
