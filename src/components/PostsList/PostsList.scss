@@ -1,0 +1,20 @@
+@import '../../variables';
+
+.postsList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.postsList-title {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 35px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.postsList-listWrapper {
+    display: flex;
+    flex-direction: column;
+}

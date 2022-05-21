@@ -1,9 +1,8 @@
-import React, { useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { AppRoute } from 'constants/AppRoute';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { IUserVerboseFront } from 'types/user.types';
 
-import { PostRaw } from 'components/PostRaw';
+import { PostsList } from 'components/PostsList';
 import { UserVerbose } from 'components/UserVerbose';
 
 const MOCK_USER: IUserVerboseFront = {
@@ -26,22 +25,15 @@ const MOCK_POST = {
     body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
 };
 
+const MOCK_POSTS = [MOCK_POST, MOCK_POST, MOCK_POST];
+
 export const UserPage: React.FC = () => {
     const { userId } = useParams() as { userId: string };
-    const navigate = useNavigate();
-
-    const handlePostClick = useCallback(
-        (postId: string) => {
-            navigate(AppRoute.Post(userId, postId));
-        },
-        [navigate, userId],
-    );
-
     return (
         <>
             <div>{`User ${userId} Page`}</div>
             <UserVerbose user={MOCK_USER} />
-            <PostRaw post={MOCK_POST} handleClick={handlePostClick} />
+            <PostsList posts={MOCK_POSTS} userId={userId} />
         </>
     );
 };
