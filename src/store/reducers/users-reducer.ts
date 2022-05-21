@@ -33,7 +33,7 @@ const usersSlice = createSlice({
             })
             .addCase(requestUsersThunkAction.rejected, (state, { error }) => {
                 state.fetchStatus = FetchStatus.Error;
-                state.error = JSON.stringify(error);
+                state.error = error.message;
                 state.users = [];
             });
     },

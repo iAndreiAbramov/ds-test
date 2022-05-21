@@ -6,3 +6,4 @@ const getUsersState = (state: RootStateType): IUsersState => state.users;
 
 export const selectUsers = createSelector([getUsersState], (state) => state.users);
 export const selectUsersFetchStatus = createSelector([getUsersState], (state) => state.fetchStatus);
+export const selectUsersError = createSelector([getUsersState], (state) => state.error);
