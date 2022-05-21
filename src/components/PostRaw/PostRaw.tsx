@@ -10,9 +10,9 @@ const CnPostRaw = cn('postRaw');
 export const PostRaw: React.FC<IPostRawProps> = ({ post, handleClick }) => {
     const { title, body, id } = post;
     return (
-        <div className={CnPostRaw()} onClick={() => handleClick(String(id))}>
+        <article className={CnPostRaw()} onClick={() => handleClick(String(id))}>
             <h3 className={CnPostRaw('title')}>{title}</h3>
             <p className={CnPostRaw('body')}>{body}</p>
-        </div>
+        </article>
     );
 };
