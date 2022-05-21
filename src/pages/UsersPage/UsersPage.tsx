@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { resetUsersState } from 'store/reducers/users-reducer';
 import {
     selectUsers,
     selectUsersError,
@@ -20,15 +21,19 @@ export const UsersPage: React.FC = () => {
     const [isFetchingComplete, setIsFetchingComplete] = useState(false);
 
     const isUsersDataFetching = useMemo(
-        () => usersFetchStatus === FetchStatus.Fetching,
+        () =>
+            usersFetchStatus !== FetchStatus.Initial &&
+            usersFetchStatus !== FetchStatus.Error &&
+            usersFetchStatus !== FetchStatus.Done,
         [usersFetchStatus],
     );
 
     useEffect(() => {
-        if (usersFetchStatus === FetchStatus.Initial) {
-            void dispatch(requestUsersThunkAction());
-        }
-    }, [dispatch, usersFetchStatus]);
+        void dispatch(requestUsersThunkAction());
+        return () => {
+            void dispatch(resetUsersState());
+        };
+    }, [dispatch]);
 
     return (
         <>

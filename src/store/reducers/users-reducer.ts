@@ -18,7 +18,13 @@ const initialState: IUsersState = {
 const usersSlice = createSlice({
     name: 'users',
     initialState,
-    reducers: {},
+    reducers: {
+        resetState: (state) => {
+            state.error = undefined;
+            state.fetchStatus = FetchStatus.Initial;
+            state.users = [] as IUserRawFront[];
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(requestUsersThunkAction.pending, (state) => {
@@ -39,4 +45,5 @@ const usersSlice = createSlice({
     },
 });
 
+export const { resetState: resetUsersState } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;

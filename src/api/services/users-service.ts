@@ -9,3 +9,11 @@ export const requestUsers = async (): Promise<IUserBack[]> =>
         .catch(() => {
             throw new Error('Unknown server error, please try later');
         });
+
+export const requestUser = async (userId: string): Promise<IUserBack> =>
+    await api
+        .get<Promise<IUserBack>>(ApiRoute.User(userId))
+        .then((response) => response?.data)
+        .catch(() => {
+            throw new Error('Unknown server error, please try later');
+        });

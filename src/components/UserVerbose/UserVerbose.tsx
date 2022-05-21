@@ -8,7 +8,14 @@ import './UserVerbose.scss';
 const CnUserVerbose = cn('userVerbose');
 
 export const UserVerbose: React.FC<IUserVerboseProps> = ({ user }) => {
-    const { username, name, email, phone, website, company } = user;
+    const {
+        username = 'no data',
+        name = 'no data',
+        email = 'no data',
+        phone = 'no data',
+        website = 'no data',
+        company = { name: 'no data', bs: '' },
+    } = user;
     return (
         <section className={CnUserVerbose()}>
             <h2 className={CnUserVerbose('title')}>User Details</h2>
