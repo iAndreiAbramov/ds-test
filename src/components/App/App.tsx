@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { AppRoute } from 'constants/AppRoute';
 import { QueryParam } from 'constants/QueryParam';
+import { NotFound } from 'pages/NotFound';
 import { PostPage } from 'pages/PostPage';
 import { PostsPage } from 'pages/PostsPage';
 import { UserPage } from 'pages/UserPage';
@@ -22,6 +23,7 @@ export const App: React.FC = () => {
                         path={AppRoute.Post(`:${QueryParam.UserId}`, `:${QueryParam.PostId}`)}
                         element={<PostPage />}
                     />
+                    <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
         </BrowserRouter>
