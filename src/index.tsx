@@ -11,3 +11,8 @@ root.render(
         <App />
     </React.StrictMode>,
 );
+export { MOCK_USERS } from './mocks/mocks';
+export { MOCK_POSTS } from './mocks/mocks';
+export { MOCK_USER } from './mocks/mocks';
+export { MOCK_COMMENTS } from './mocks/mocks';
+export { MOCK_POST } from './mocks/mocks';

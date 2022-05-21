@@ -10,10 +10,14 @@ const CnUserVerbose = cn('userVerbose');
 export const UserVerbose: React.FC<IUserVerboseProps> = ({ user }) => {
     const { username, name, email, phone, website, company } = user;
     return (
-        <article className={CnUserVerbose()}>
-            <h2 className={CnUserVerbose('title')}>{username}</h2>
+        <section className={CnUserVerbose()}>
+            <h2 className={CnUserVerbose('title')}>User Details</h2>
             <table className={CnUserVerbose('table')}>
                 <tbody>
+                    <tr className={CnUserVerbose('row')}>
+                        <td className={CnUserVerbose('cell')}>Username</td>
+                        <td className={CnUserVerbose('cell')}>{username}</td>
+                    </tr>
                     <tr className={CnUserVerbose('row')}>
                         <td className={CnUserVerbose('cell')}>Name</td>
                         <td className={CnUserVerbose('cell')}>{name}</td>
@@ -44,6 +48,6 @@ export const UserVerbose: React.FC<IUserVerboseProps> = ({ user }) => {
                     </tr>
                 </tbody>
             </table>
-        </article>
+        </section>
     );
 };

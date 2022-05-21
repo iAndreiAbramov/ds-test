@@ -1,7 +1,11 @@
 @import '../../variables';
 
 .commentsList {
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 640px;
 }
 
 .commentsList-title {
@@ -13,6 +17,7 @@
 }
 
 .commentsList-listWrapper {
-    width: 100%;
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

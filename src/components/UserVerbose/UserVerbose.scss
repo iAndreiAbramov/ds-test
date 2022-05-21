@@ -1,7 +1,10 @@
 @import '../../variables';
 
 .userVerbose {
-    max-width: 600px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .userVerbose-title {

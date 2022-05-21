@@ -1,19 +1,8 @@
 import React from 'react';
+import { MOCK_USERS } from 'mocks/mocks';
 
 import { UsersList } from 'components/UsersList';
 
-const MOCK_USER = {
-    name: 'Ivan Ivanov',
-    userId: '1',
-};
-
-const MOCK_USERS = [MOCK_USER, MOCK_USER, MOCK_USER];
-
 export const UsersPage: React.FC = () => {
-    return (
-        <>
-            <div>Users page</div>
-            <UsersList users={MOCK_USERS} />
-        </>
-    );
+    return <UsersList users={MOCK_USERS} />;
 };

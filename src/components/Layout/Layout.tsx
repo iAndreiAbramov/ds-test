@@ -14,7 +14,7 @@ export const Layout: React.FC = () => {
                     </Link>
                 </div>
             </header>
-            <div className="container">
+            <div className="container pageContent">
                 <Outlet />
             </div>
         </>

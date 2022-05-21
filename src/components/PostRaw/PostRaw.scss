@@ -1,9 +1,8 @@
 @import '../../variables';
 
 .postRaw {
-    max-width: 600px;
-    padding: 16px 35px;
-    border: $border-table;
+    border-bottom: $border-card;
+    padding-bottom: 6px;
 
     cursor: pointer;
 

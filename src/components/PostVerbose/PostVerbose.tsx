@@ -9,6 +9,7 @@ const CnPostVerbose = cn('postVerbose');
 
 export const PostVerbose: React.FC<IPostVerboseProps> = ({ post }) => {
     const { title, body } = post;
+
     return (
         <article className={CnPostVerbose()}>
             <h3 className={CnPostVerbose('title')}>{title}</h3>

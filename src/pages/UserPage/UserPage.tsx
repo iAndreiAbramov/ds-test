@@ -1,39 +1,17 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { IUserVerboseFront } from 'types/user.types';
+import { MOCK_POSTS, MOCK_USER } from 'mocks/mocks';
 
 import { PostsList } from 'components/PostsList';
 import { UserVerbose } from 'components/UserVerbose';
 
-const MOCK_USER: IUserVerboseFront = {
-    id: 1,
-    name: 'Leanne Graham',
-    username: 'Bret',
-    email: 'Sincere@april.biz',
-    phone: '1-770-736-8031 x56442',
-    website: 'hildegard.org',
-    company: {
-        name: 'Romaguera-Crona',
-        bs: 'harness real-time e-markets',
-    },
-};
-
-const MOCK_POST = {
-    userId: 1,
-    id: 1,
-    title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-    body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
-};
-
-const MOCK_POSTS = [MOCK_POST, MOCK_POST, MOCK_POST];
-
 export const UserPage: React.FC = () => {
     const { userId } = useParams() as { userId: string };
+
     return (
         <>
-            <div>{`User ${userId} Page`}</div>
             <UserVerbose user={MOCK_USER} />
-            <PostsList posts={MOCK_POSTS} userId={userId} />
+            <PostsList posts={MOCK_POSTS} userId={userId} isWithButton />
         </>
     );
 };
