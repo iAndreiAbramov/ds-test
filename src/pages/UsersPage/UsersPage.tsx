@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UserCard } from 'components/UserCard';
+import { UserRaw } from 'components/UserRaw';
 
 const MOCK_USER = {
     name: 'Ivan',
@@ -11,7 +11,7 @@ export const UsersPage: React.FC = () => {
     return (
         <>
             <div>Users page</div>
-            <UserCard name={MOCK_USER.name} userId={MOCK_USER.userId} />
+            <UserRaw name={MOCK_USER.name} userId={MOCK_USER.userId} />
         </>
     );
 };

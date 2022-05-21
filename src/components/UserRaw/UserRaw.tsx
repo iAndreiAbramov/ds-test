@@ -6,11 +6,11 @@ import { IUserRawFront } from 'types/user.types';
 
 import { Button } from 'components/Button';
 
-import './UserCard.scss';
+import './UserRaw.scss';
 
 const CnUserCard = cn('userCard');
 
-export const UserCard: React.FC<IUserRawFront> = ({ name, userId }) => {
+export const UserRaw: React.FC<IUserRawFront> = ({ name, userId }) => {
     const navigate = useNavigate();
 
     const handleButtonClick = useCallback(() => {
