@@ -30,11 +30,17 @@ export const PostsList: React.FC<IPostsListProps> = ({ posts, userId, isWithButt
         <section className={CnPostsList()}>
             <h2 className={CnPostsList('title')}>Posts</h2>
             <div className={CnPostsList('listWrapper')}>
-                {posts.map((post) => (
-                    <PostRaw post={post} key={post.id} handleClick={handlePostClick} />
-                ))}
+                {posts.length > 0 ? (
+                    posts.map((post) => (
+                        <PostRaw post={post} key={post.id} handleClick={handlePostClick} />
+                    ))
+                ) : (
+                    <div>User doesn&apos;t have any posts yet</div>
+                )}
             </div>
-            {isWithButton && <Button handleClick={handleButtonClick}>More posts</Button>}
+            {isWithButton && posts.length > 0 && (
+                <Button handleClick={handleButtonClick}>See all posts</Button>
+            )}
         </section>
     );
 };
