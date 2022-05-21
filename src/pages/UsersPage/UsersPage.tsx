@@ -1,17 +1,19 @@
 import React from 'react';
 
-import { UserRaw } from 'components/UserRaw';
+import { UsersList } from 'components/UsersList';
 
 const MOCK_USER = {
-    name: 'Ivan',
+    name: 'Ivan Ivanov',
     userId: '1',
 };
+
+const MOCK_USERS = [MOCK_USER, MOCK_USER, MOCK_USER];
 
 export const UsersPage: React.FC = () => {
     return (
         <>
             <div>Users page</div>
-            <UserRaw name={MOCK_USER.name} userId={MOCK_USER.userId} />
+            <UsersList users={MOCK_USERS} />
         </>
     );
 };

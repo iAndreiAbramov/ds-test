@@ -6,6 +6,12 @@
 
     border: $border-card;
 
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+
     &:hover {
         border: $border-card-hover;
     }
