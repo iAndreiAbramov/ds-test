@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Comment } from 'components/Comment';
+import { CommentsList } from 'components/CommentsList';
 import { PostVerbose } from 'components/PostVerbose';
 
 const MOCK_POST = {
@@ -19,14 +19,15 @@ const MOCK_COMMENT = {
     body: 'laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium',
 };
 
+const MOCK_COMMENTS = [MOCK_COMMENT, MOCK_COMMENT, MOCK_COMMENT];
+
 export const PostPage: React.FC = () => {
     const { userId, postId } = useParams() as { userId: string; postId: string };
-
     return (
         <>
             <div>{`User ${userId} post ${postId} page`}</div>
             <PostVerbose post={MOCK_POST} />
-            <Comment comment={MOCK_COMMENT} />
+            <CommentsList comments={MOCK_COMMENTS} />
         </>
     );
 };

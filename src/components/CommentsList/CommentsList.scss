@@ -1,0 +1,18 @@
+@import '../../variables';
+
+.commentsList {
+    max-width: 600px;
+}
+
+.commentsList-title {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 35px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentsList-listWrapper {
+    width: 100%;
+    max-width: 100%;
+}
