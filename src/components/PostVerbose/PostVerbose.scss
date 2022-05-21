@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.postVerbose {
+    max-width: 600px;
+}
+
+.postVerbose-title {
+    margin-bottom: 10px;
+
+    font-weight: $fw-subtitle;
+    font-size: 17px;
+    line-height: 1.35;
+    text-transform: capitalize;
+    color: $fc-dark;
+}
+
+.postVerbose-body {
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 12px;
+    line-height: 1.42;
+    color: $fc-dark;
+}

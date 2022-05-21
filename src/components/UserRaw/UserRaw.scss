@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.userCard {
+    padding: 15px 17px;
+    width: 240px;
+
+    border: $border-card;
+
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+
+    &:hover {
+        border: $border-card-hover;
+    }
+}
+
+.userCard-title {
+    margin-bottom: 35px;
+
+    font-style: normal;
+    font-weight: $fw-subtitle;
+    font-size: 17px;
+    line-height: 1.35;
+    text-transform: capitalize;
+    color: $fc-dark;
+}

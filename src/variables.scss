@@ -1,13 +1,18 @@
 $ff-main: 'Open Sans', 'Arial', sans-serif;
+$ff-title: 'Alegreya Sans SC', 'Arial', sans-serif;
 
 $fc-dark: #000000;
 $fc-light: #ffffff;
 
-$fw-title: 700;
+$fw-title: 500;
+$fw-subtitle: 700;
 $fw-regular: 400;
 $fw-button: 600;
 
 $bgc-light: #ffffff;
 $bgc-button: #101010;
 
-$border-color-button: #0d1e4b;
+$border-button: 1px solid #0d1e4b;
+$border-card: 1px solid #dadada;
+$border-card-hover: 1px solid #000000;
+$border-table: 1px solid #000000;

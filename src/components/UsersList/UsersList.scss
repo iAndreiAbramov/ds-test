@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.usersList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.usersList-title {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 35px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.usersList-listWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+}

@@ -1,8 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { MOCK_COMMENTS, MOCK_POST } from 'mocks/mocks';
+
+import { CommentsList } from 'components/CommentsList';
+import { PostVerbose } from 'components/PostVerbose';
 
 export const PostPage: React.FC = () => {
-    const { userId, postId } = useParams() as { userId: string; postId: string };
-
-    return <div>{`User ${userId} post ${postId} page`}</div>;
+    return (
+        <>
+            <PostVerbose post={MOCK_POST} />
+            <CommentsList comments={MOCK_COMMENTS} />
+        </>
+    );
 };

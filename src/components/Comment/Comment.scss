@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.comment {
+    border-bottom: $border-card;
+    padding-bottom: 10px;
+}
+
+.comment-title {
+    margin-bottom: 10px;
+
+    font-weight: $fw-subtitle;
+    font-size: 17px;
+    line-height: 1.35;
+    text-transform: capitalize;
+    color: $fc-dark;
+}
+
+.comment-body {
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 12px;
+    line-height: 1.42;
+    color: $fc-dark;
+}

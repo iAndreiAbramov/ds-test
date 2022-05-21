@@ -1,0 +1,50 @@
+@import '../../variables';
+
+.postRaw {
+    border-bottom: $border-card;
+    padding-bottom: 6px;
+
+    cursor: pointer;
+
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+
+    &:hover {
+       border-color: lighten(#000000, 75%)
+    }
+
+    &:hover > &-title {
+        color: lighten($fc-dark, 50%);
+    }
+}
+
+.postRaw-title {
+    font-weight: $fw-subtitle;
+    font-size: 17px;
+    line-height: 1.35;
+    text-transform: capitalize;
+    color: $fc-dark;
+
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.postRaw-body {
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 12px;
+    line-height: 1.42;
+    color: rgba(0, 0, 0, 0.41);
+
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

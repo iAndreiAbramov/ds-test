@@ -1,5 +1,8 @@
 import React from 'react';
+import { MOCK_USERS } from 'mocks/mocks';
+
+import { UsersList } from 'components/UsersList';
 
 export const UsersPage: React.FC = () => {
-    return <div>Users page</div>;
+    return <UsersList users={MOCK_USERS} />;
 };

@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.commentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 640px;
+}
+
+.commentsList-title {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 35px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentsList-listWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
