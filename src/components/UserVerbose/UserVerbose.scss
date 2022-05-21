@@ -1,0 +1,32 @@
+@import '../../variables';
+
+.userVerbose {
+    max-width: 600px;
+}
+
+.userVerbose-title {
+    margin-bottom: 6px;
+
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 1;
+    color: $fc-dark;
+}
+
+.userVerbose-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-style: normal;
+    font-weight: $fw-regular;
+    font-size: 18px;
+    line-height: 0.94;
+    color: $fc-dark;
+}
+
+.userVerbose-cell {
+    padding: 10px;
+    border: $border-table;
+}
