@@ -7,18 +7,22 @@ import { PostsPage } from 'pages/PostsPage';
 import { UserPage } from 'pages/UserPage';
 import { UsersPage } from 'pages/UsersPage';
 
+import { Layout } from 'components/Layout';
+
 export const App: React.FC = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path={AppRoute.Root()} element={<Navigate to={AppRoute.Users()} />} />
-                <Route path={AppRoute.Users()} element={<UsersPage />} />
-                <Route path={AppRoute.User(`:${QueryParam.UserId}`)} element={<UserPage />} />
-                <Route path={AppRoute.Posts(`:${QueryParam.UserId}`)} element={<PostsPage />} />
-                <Route
-                    path={AppRoute.Post(`:${QueryParam.UserId}`, `:${QueryParam.PostId}`)}
-                    element={<PostPage />}
-                />
+                <Route path={AppRoute.Users()} element={<Layout />}>
+                    <Route index element={<UsersPage />} />
+                    <Route path={AppRoute.User(`:${QueryParam.UserId}`)} element={<UserPage />} />
+                    <Route path={AppRoute.Posts(`:${QueryParam.UserId}`)} element={<PostsPage />} />
+                    <Route
+                        path={AppRoute.Post(`:${QueryParam.UserId}`, `:${QueryParam.PostId}`)}
+                        element={<PostPage />}
+                    />
+                </Route>
             </Routes>
         </BrowserRouter>
     );

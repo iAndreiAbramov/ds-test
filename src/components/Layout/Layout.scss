@@ -1,0 +1,26 @@
+@import '../../variables';
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    width: 100%;
+    background-color: $bgc-button;
+    color: $fc-light;
+}
+
+.pageHeader-title {
+    font-family: $ff-title;
+    font-weight: $fw-subtitle;
+    font-size: 28px;
+    line-height: 1;
+    color: $fc-light;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
