@@ -2,7 +2,11 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { resetUserState } from 'store/reducers/user-reducer';
-import { selectPostsFetchStatus, selectPostsPreview } from 'store/selectors/posts-selectors';
+import {
+    selectPostsError,
+    selectPostsFetchStatus,
+    selectPostsPreview,
+} from 'store/selectors/posts-selectors';
 import { selectUser } from 'store/selectors/user-selectors';
 import { selectUsersFetchStatus } from 'store/selectors/users-selectors';
 import { useAppDispatch } from 'store/store';
@@ -20,6 +24,7 @@ export const UserPage: React.FC = () => {
     const userFetchStatus = useSelector(selectUsersFetchStatus);
     const postsPreview = useSelector(selectPostsPreview);
     const postsFetchStatus = useSelector(selectPostsFetchStatus);
+    const postsError = useSelector(selectPostsError);
     const { userId } = useParams() as { userId: string };
     const [isFetchingComplete, setIsFetchingComplete] = useState(false);
 
@@ -55,7 +60,12 @@ export const UserPage: React.FC = () => {
             {isFetchingComplete ? (
                 <>
                     <UserVerbose user={userData} />
-                    <PostsList posts={postsPreview} userId={userId} isWithButton />
+                    <PostsList
+                        posts={postsPreview}
+                        userId={userId}
+                        isWithButton
+                        errorMessage={postsError}
+                    />
                 </>
             ) : (
                 <LoaderDelayed

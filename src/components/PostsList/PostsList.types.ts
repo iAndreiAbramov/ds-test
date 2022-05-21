@@ -4,4 +4,5 @@ export interface IPostsListProps {
     posts: IPost[];
     userId: string;
     isWithButton?: boolean;
+    errorMessage?: string;
 }

@@ -38,14 +38,13 @@ export const UsersPage: React.FC = () => {
     return (
         <>
             {isFetchingComplete ? (
-                <UsersList users={users} />
+                <UsersList users={users} errorMessage={usersError} />
             ) : (
                 <LoaderDelayed
                     dependencies={[isUsersDataFetching]}
                     handleContentIsReady={setIsFetchingComplete}
                 />
             )}
-            {usersFetchStatus === FetchStatus.Error && <div>{usersError}</div>}
         </>
     );
 };

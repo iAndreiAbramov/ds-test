@@ -9,15 +9,19 @@ import './UsersList.scss';
 
 const CnUsersList = cn('usersList');
 
-export const UsersList: React.FC<IUsersListProps> = ({ users }) => {
+export const UsersList: React.FC<IUsersListProps> = ({ users, errorMessage }) => {
     return (
         <section className={CnUsersList()}>
             <h2 className={CnUsersList('title')}>Users List</h2>
             <div className={CnUsersList('listWrapper')}>
-                {users.map(({ userId, name }) => (
-                    <UserRaw userId={userId} name={name} key={userId} />
-                ))}
+                {users.length > 0 &&
+                    !errorMessage &&
+                    users.map(({ userId, name }) => (
+                        <UserRaw userId={userId} name={name} key={userId} />
+                    ))}
             </div>
+            {users.length === 0 && !errorMessage && <div>No users found</div>}
+            {errorMessage && <div>{errorMessage}</div>}
         </section>
     );
 };
