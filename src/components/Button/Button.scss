@@ -25,4 +25,9 @@
     &:hover {
         background-color: lighten($bgc-button, 15%);
     }
+
+    &:disabled {
+        background-color: lighten($bgc-button, 50%);
+        cursor: default;
+    }
 }

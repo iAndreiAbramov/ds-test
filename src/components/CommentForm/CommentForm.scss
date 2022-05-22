@@ -1,0 +1,112 @@
+@import '../../variables';
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.commentForm-title {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 35px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentForm-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentForm-input {
+    border: $border-input;
+    padding: 10px;
+
+    font-weight: $fw-regular;
+    font-size: 11px;
+    line-height: 15px;
+    color: $fc-dark;
+
+    &:focus {
+        outline: $border-input;
+    }
+
+    &_incorrect {
+        border: $border-incorrect;
+    }
+}
+
+.commentForm-input_textarea {
+    resize: none;
+
+    min-height: 156px;
+}
+
+.commentForm-labelText {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentForm-asterisk {
+    font-size: 20px;
+    color: red;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-10px)
+    }
+
+    20% {
+        transform: translateX(10px)
+    }
+
+    40% {
+        transform: translateX(-10px)
+    }
+
+    60% {
+        transform: translateX(5px)
+    }
+
+    80% {
+        transform: translateX(-5px)
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.commentForm_hasErrors {
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+
+    animation: shake 0.3s linear;
+}
+
+.commentForm-error {
+    margin: 0;
+    padding: 0;
+    min-height: 12px;
+
+    font-family: $ff-main;
+    font-weight: $fw-regular;
+    font-size: 10px;
+    color: red;
+    line-height: 1.2;
+}

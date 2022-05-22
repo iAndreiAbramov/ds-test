@@ -28,7 +28,6 @@ const postsSlice = createSlice({
             })
             .addCase(requestPostsThunkAction.fulfilled, (state, { payload }) => {
                 state.fetchStatus = FetchStatus.Done;
-                state.error = undefined;
                 state.posts = payload;
             })
             .addCase(requestPostsThunkAction.rejected, (state, { error }) => {
