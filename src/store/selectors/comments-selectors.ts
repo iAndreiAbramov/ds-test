@@ -10,3 +10,7 @@ export const selectCommentsFetchStatus = createSelector(
     (state) => state.fetchStatus,
 );
 export const selectCommentsError = createSelector([getCommentsState], (state) => state.error);
+export const selectCommentPostFetchStatus = createSelector(
+    [getCommentsState],
+    (state) => state.postFetchStatus,
+);

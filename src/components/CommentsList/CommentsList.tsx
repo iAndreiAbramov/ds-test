@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '@bem-react/classname';
+import { useAppDispatch } from 'store/store';
+import { postCommentThunkAction } from 'store/thunk-actions/comments-thunk-actions';
 import { ICommentFormValues } from 'types/comment-form.types';
 
 import { Button } from 'components/Button';
@@ -12,7 +14,13 @@ import './CommentsList.scss';
 
 const CnCommentsList = cn('commentsList');
 
-export const CommentsList: React.FC<ICommentsListProps> = ({ comments, errorMessage }) => {
+export const CommentsList: React.FC<ICommentsListProps> = ({
+    comments,
+    errorMessage,
+    postId,
+    onCommentAdd,
+}) => {
+    const dispatch = useAppDispatch();
     const [isFormActive, setIsFormActive] = useState(false);
     const formRef = useRef<HTMLDivElement>(null);
 
@@ -20,9 +28,14 @@ export const CommentsList: React.FC<ICommentsListProps> = ({ comments, errorMess
         setIsFormActive(true);
     }, []);
 
-    const handleFormSubmit = useCallback((values: ICommentFormValues) => {
-        alert(JSON.stringify(values, null, ' '));
-    }, []);
+    const handleFormSubmit = useCallback(
+        (values: ICommentFormValues) => {
+            setIsFormActive(false);
+            onCommentAdd(false);
+            void dispatch(postCommentThunkAction({ postId, values }));
+        },
+        [dispatch, postId, onCommentAdd],
+    );
 
     useEffect(() => {
         if (isFormActive) {

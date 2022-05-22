@@ -34,7 +34,6 @@ const usersSlice = createSlice({
             })
             .addCase(requestUsersThunkAction.fulfilled, (state, { payload }) => {
                 state.fetchStatus = FetchStatus.Done;
-                state.error = undefined;
                 state.users = payload;
             })
             .addCase(requestUsersThunkAction.rejected, (state, { error }) => {

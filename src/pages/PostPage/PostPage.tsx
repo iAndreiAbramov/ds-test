@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { usePostFromStore } from 'hooks/usePostFromStore';
 import {
+    selectCommentPostFetchStatus,
     selectComments,
     selectCommentsError,
     selectCommentsFetchStatus,
@@ -25,6 +26,7 @@ export const PostPage: React.FC = () => {
     const postFetchStatus = useSelector(selectPostsFetchStatus);
     const comments = useSelector(selectComments);
     const commentsFetchStatus = useSelector(selectCommentsFetchStatus);
+    const commentPostFetchStatus = useSelector(selectCommentPostFetchStatus);
     const commentsError = useSelector(selectCommentsError);
     const { postId } = useParams() as { postId: string };
     const postFromStore = usePostFromStore(posts, postId);
@@ -46,6 +48,15 @@ export const PostPage: React.FC = () => {
         [commentsFetchStatus],
     );
 
+    const isCommentPosting = useMemo(
+        () => commentPostFetchStatus === FetchStatus.Fetching,
+        [commentPostFetchStatus],
+    );
+
+    const handleCommentAdd = useCallback(() => {
+        setIsFetchingComplete(false);
+    }, []);
+
     useEffect(() => {
         if (!postFromStore) {
             void dispatch(requestPostThunkAction(postId));
@@ -61,11 +72,16 @@ export const PostPage: React.FC = () => {
             {isFetchingComplete ? (
                 <>
                     <PostVerbose post={postFromStore || post} />
-                    <CommentsList comments={comments} errorMessage={commentsError} />
+                    <CommentsList
+                        comments={comments}
+                        errorMessage={commentsError}
+                        postId={postId}
+                        onCommentAdd={handleCommentAdd}
+                    />
                 </>
             ) : (
                 <LoaderDelayed
-                    dependencies={[isPostDataFetching, isCommentsDataFetching]}
+                    dependencies={[isPostDataFetching, isCommentsDataFetching, isCommentPosting]}
                     handleContentIsReady={setIsFetchingComplete}
                 />
             )}

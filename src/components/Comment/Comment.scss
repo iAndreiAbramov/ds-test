@@ -1,8 +1,11 @@
 @import '../../variables';
 
 .comment {
-    border-bottom: $border-card;
     padding-bottom: 10px;
+
+    &:not(&:last-child) {
+        border-bottom: $border-card;
+    }
 }
 
 .comment-title {

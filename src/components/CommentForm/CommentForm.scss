@@ -3,7 +3,7 @@
 .commentForm {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 6px;
 }
 
 .commentForm-title {
@@ -39,8 +39,8 @@
         outline: $border-input;
     }
 
-    &_error {
-        border: $border-error;
+    &_incorrect {
+        border: $border-incorrect;
     }
 }
 
@@ -61,4 +61,52 @@
 .commentForm-asterisk {
     font-size: 20px;
     color: red;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-10px)
+    }
+
+    20% {
+        transform: translateX(10px)
+    }
+
+    40% {
+        transform: translateX(-10px)
+    }
+
+    60% {
+        transform: translateX(5px)
+    }
+
+    80% {
+        transform: translateX(-5px)
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.commentForm_hasErrors {
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+
+    animation: shake 0.3s linear;
+}
+
+.commentForm-error {
+    margin: 0;
+    padding: 0;
+    min-height: 12px;
+
+    font-family: $ff-main;
+    font-weight: $fw-regular;
+    font-size: 10px;
+    color: red;
+    line-height: 1.2;
 }
