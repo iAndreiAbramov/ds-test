@@ -1,0 +1,64 @@
+@import '../../variables';
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.commentForm-title {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 35px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentForm-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentForm-input {
+    border: $border-input;
+    padding: 10px;
+
+    font-weight: $fw-regular;
+    font-size: 11px;
+    line-height: 15px;
+    color: $fc-dark;
+
+    &:focus {
+        outline: $border-input;
+    }
+
+    &_error {
+        border: $border-error;
+    }
+}
+
+.commentForm-input_textarea {
+    resize: none;
+
+    min-height: 156px;
+}
+
+.commentForm-labelText {
+    font-family: $ff-title;
+    font-weight: $fw-title;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $fc-dark;
+}
+
+.commentForm-asterisk {
+    font-size: 20px;
+    color: red;
+}
