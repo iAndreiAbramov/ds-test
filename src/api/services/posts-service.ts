@@ -9,3 +9,11 @@ export const requestPosts = async (userId: string): Promise<IPost[]> =>
         .catch(() => {
             throw new Error('Unknown server error, please try later');
         });
+
+export const requestPost = async (postId: string): Promise<IPost> =>
+    api
+        .get<Promise<IPost>>(ApiRoute.Post(postId))
+        .then((response) => response?.data)
+        .catch(() => {
+            throw new Error('Unknown server error, please try later');
+        });
