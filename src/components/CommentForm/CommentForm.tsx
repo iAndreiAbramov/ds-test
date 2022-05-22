@@ -32,7 +32,7 @@ export const CommentForm: React.FC<ICommentForm> = ({ handleFormSubmit }) => {
                                             !meta.dirtySinceLastSubmit &&
                                             submitFailed,
                                     })}
-                                    placeholder="Enter your comment"
+                                    placeholder="Enter your name"
                                     type="text"
                                     {...input}
                                 />
@@ -57,7 +57,7 @@ export const CommentForm: React.FC<ICommentForm> = ({ handleFormSubmit }) => {
                                             submitFailed,
                                     })}
                                     type="text"
-                                    placeholder="Enter your comment"
+                                    placeholder="Enter your email"
                                     {...input}
                                 />
                                 <div className={CnCommentForm('error')}>
