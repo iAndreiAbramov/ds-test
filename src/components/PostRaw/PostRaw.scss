@@ -1,7 +1,6 @@
 @import '../../variables';
 
 .postRaw {
-    border-bottom: $border-card;
     padding-bottom: 6px;
 
     cursor: pointer;
@@ -11,6 +10,10 @@
     -ms-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
+
+    &:not(&:last-child) {
+        border-bottom: $border-card;
+    }
 
     &:hover {
        border-color: lighten(#000000, 75%)

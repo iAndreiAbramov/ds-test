@@ -12,8 +12,14 @@ export const PostVerbose: React.FC<IPostVerboseProps> = ({ post }) => {
 
     return (
         <article className={CnPostVerbose()}>
-            <h3 className={CnPostVerbose('title')}>{title}</h3>
-            <p className={CnPostVerbose('body')}>{body}</p>
+            {title && body ? (
+                <>
+                    <h3 className={CnPostVerbose('title')}>{title}</h3>
+                    <p className={CnPostVerbose('body')}>{body}</p>
+                </>
+            ) : (
+                <div>Sorry, we can&apos;t load the post, please try later</div>
+            )}
         </article>
     );
 };

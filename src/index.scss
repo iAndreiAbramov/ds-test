@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 body {
+    position: relative;
     margin: 0;
 
     font-family: $ff-main;
