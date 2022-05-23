@@ -1,7 +1,8 @@
 @import '../../variables';
 
 .userVerbose {
-    max-width: 640px;
+    width: 640px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -32,6 +33,10 @@
 .userVerbose-cell {
     padding: 10px;
     border: $border-table;
+
+    &:last-child {
+        word-break: break-word;
+    }
 
     & a {
         color: inherit;
